@@ -10,16 +10,20 @@ Looking for individual components? See [awesome-claude-code](https://github.com/
 
 - [Virtual Engineering Teams](#virtual-engineering-teams)
 - [Plan-Build-Review Pipelines](#plan-build-review-pipelines)
+- [Multi-Agent Orchestration](#multi-agent-orchestration)
+- [Context and Memory Management](#context-and-memory-management)
 - [TDD and Code Quality](#tdd-and-code-quality)
 - [Git and PR Automation](#git-and-pr-automation)
-- [Multi-Agent Orchestration](#multi-agent-orchestration)
 - [Ship and Deploy](#ship-and-deploy)
+- [Cross-LLM Collaboration](#cross-llm-collaboration)
 - [Research and Discovery](#research-and-discovery)
 - [Browser and Testing](#browser-and-testing)
 - [Marketing and Content](#marketing-and-content)
 - [Business Operating Systems](#business-operating-systems)
 - [Autonomous Loops](#autonomous-loops)
 - [Scope and Config Management](#scope-and-config-management)
+- [Monitoring and Dashboards](#monitoring-and-dashboards)
+- [Comprehensive Frameworks](#comprehensive-frameworks)
 
 ---
 
@@ -28,65 +32,92 @@ Looking for individual components? See [awesome-claude-code](https://github.com/
 Workflow systems that simulate an entire engineering team with specialized agents.
 
 - [gstack](https://github.com/garrytan/gstack) - Virtual engineering team with 25 skills — CEO review, design review, eng review, QA, ship, canary deploy, freeze/guard safety hooks, and browser-based testing. The gold standard for "skills + hooks + CLAUDE.md as a startup engineering org."
-- [Superpowers](https://github.com/jasonm/superpowers) - Composable plugin with auto-triggering skills for TDD, brainstorming, plan-then-execute, subagent-driven development, parallel agent dispatch, and code review loops. Includes hooks for session-start and verification gates.
-- [Everything Claude Code](https://github.com/nicholasareed/everything-claude-code) - Comprehensive agent harness with 28 agents, 60+ commands, 100+ skills, hook profiles (minimal/standard/strict), language-specific rules for 12 languages, and autonomous loop management.
+- [Superpowers](https://github.com/jasonm/superpowers) - Composable plugin with auto-triggering skills for TDD, brainstorming, plan-then-execute, subagent-driven development, parallel agent dispatch, and code review loops. Includes hooks for session-start and verification gates. 20K stars.
 - [Solopreneur Plugin](https://github.com/codeislaw1993/solopreneur-plugin) - Turns Claude into a virtual company with 6 specialist agents (engineer, designer, QA, researcher, bizops, content strategist). Full product lifecycle: discover → spec → backlog → design → build → review → ship. Includes decision journal and observer protocol.
+- [OneRedOak/claude-code-workflows](https://github.com/OneRedOak/claude-code-workflows) - Battle-tested workflows from an AI-native startup's heavy daily Claude Code usage since launch. 3,734 stars.
+- [claude-forge](https://github.com/sangrokjung/claude-forge) - oh-my-zsh-inspired plugin framework with 11 AI agents, 36 commands, 15 skills, and 6-layer security hooks. 593 stars.
 
 ## Plan-Build-Review Pipelines
 
 Workflows that structure the development cycle into distinct planning, building, and review phases.
 
 - [gstack autoplan](https://github.com/garrytan/gstack) - Auto-chains CEO review → design review → eng review into a single pipeline. Each review phase has its own checklist and acceptance criteria. Found in `/autoplan/SKILL.md`.
-- [Superpowers plan-execute](https://github.com/jasonm/superpowers) - Two-phase workflow: `/write-plan` creates a structured plan, `/execute-plan` implements it step by step with verification gates between steps. Found in `skills/writing-plans/` and `skills/executing-plans/`.
+- [Superpowers plan-execute](https://github.com/jasonm/superpowers) - Two-phase workflow: `/write-plan` creates a structured plan, `/execute-plan` implements it step by step with verification gates between steps.
+- [Spec-Flow](https://github.com/marcusgoll/Spec-Flow) - Turn product ideas into production launches with spec-driven development, repeatable workflows with quality gates, token budgets, and auditable artifacts. 73 stars.
 - [Solopreneur sprint](https://github.com/codeislaw1993/solopreneur-plugin) - Parallel feature building with isolated git branches per feature, auto git checkpointing after every skill completion, and agent team kickoff meetings where agents debate approach.
-
-## TDD and Code Quality
-
-Workflows that enforce test-driven development and automated code quality checks.
-
-- [Superpowers TDD](https://github.com/jasonm/superpowers) - Full red-green-refactor loop: write failing test → implement → verify → refactor. Auto-triggers verification before marking any task complete. Found in `skills/test-driven-development/`.
-- [Everything Claude Code TDD](https://github.com/nicholasareed/everything-claude-code) - TDD workflow with autonomous loop support — agent keeps running test cycles until all pass. Found in `skills/tdd-workflow/`.
-- [gstack QA](https://github.com/garrytan/gstack) - Browser-based QA that opens real pages with Playwright, takes screenshots, and validates against acceptance criteria. Found in `skills/qa/`.
-- [Superpowers code review loop](https://github.com/jasonm/superpowers) - Two-skill combo: `/requesting-code-review` prepares the review request, `/receiving-code-review` processes feedback. Uses a dedicated code-reviewer agent. Found in `skills/requesting-code-review/` and `agents/code-reviewer.md`.
-
-## Git and PR Automation
-
-Workflows that automate git operations, branching strategies, and pull request management.
-
-- [Superpowers git worktrees](https://github.com/jasonm/superpowers) - Run parallel workstreams using git worktrees — each agent works in its own isolated copy of the repo. Found in `skills/using-git-worktrees/`.
-- [gstack ship pipeline](https://github.com/garrytan/gstack) - Full deploy pipeline: merge PR → deploy → post-deploy monitoring loop. Chains `/ship` → `/land-and-deploy` → `/canary` skills. Found in `skills/ship/`, `skills/land-and-deploy/`, `skills/canary/`.
-- [Autoresearch branch-per-run](https://github.com/karpathy/autoresearch) - Creates a new git branch for each autonomous experiment run (`git checkout -b autoresearch/<tag>`), tracks results in `results.tsv`, keeps or discards based on evaluation.
+- [gmickel-claude-marketplace](https://github.com/gmickel/gmickel-claude-marketplace) - Plan-first workflows (Flow-Next), Ralph autonomous mode for overnight coding, multi-model review gates, re-anchoring to prevent drift, receipt-based gating. 548 stars.
 
 ## Multi-Agent Orchestration
 
 Workflows that coordinate multiple AI agents working in parallel or sequence.
 
-- [Superpowers parallel dispatch](https://github.com/jasonm/superpowers) - Dispatch multiple subagents in parallel, each working on independent subtasks. Includes patterns for collecting results and merging. Found in `skills/dispatching-parallel-agents/`.
-- [Superpowers subagent-driven development](https://github.com/jasonm/superpowers) - Main agent breaks work into subtasks, delegates to specialist subagents, reviews their output. Found in `skills/subagent-driven-development/`.
+- [ruflo](https://github.com/ruvnet/ruflo) - Agent orchestration platform for deploying multi-agent swarms with distributed intelligence, RAG integration, and native Claude Code/Codex integration. 22,810 stars.
+- [multi-agent-shogun](https://github.com/yohey-w/multi-agent-shogun) - Samurai-inspired multi-agent system orchestrating parallel AI tasks via tmux with shogun → karo → ashigaru hierarchy. 1,096 stars.
+- [Superpowers parallel dispatch](https://github.com/jasonm/superpowers) - Dispatch multiple subagents in parallel, each working on independent subtasks. Includes patterns for collecting results and merging.
+- [Founder OS queue system](https://github.com/danielraffel/founder-os) - Queue-based task processing where agents pick up work items autonomously: `/queue:add` → `/queue:work` → `/founder:review`. Includes dependency management and blocked_by ordering.
 - [Everything Claude Code orchestrate](https://github.com/nicholasareed/everything-claude-code) - Multi-agent orchestration command that coordinates agents across different roles. Found in `commands/orchestrate.md`.
-- [Founder OS queue system](https://github.com/danielraffel/founder-os) - Queue-based task processing where agents pick up work items autonomously: `/queue:add` → `/queue:work` → `/founder:review`. Includes dependency management and blocked_by ordering. Found in `.claude/queue/`.
-- [Solopreneur kickoff](https://github.com/codeislaw1993/solopreneur-plugin) - Agent team meetings where 6 specialist agents debate approach before building. Found in `skills/kickoff/`.
+- [catlog22/Claude-Code-Workflow](https://github.com/catlog22/Claude-Code-Workflow) - JSON-driven multi-agent cadence-team development framework with intelligent CLI orchestration (Gemini/Qwen/Codex), context-first architecture. 1,555 stars.
+- [agent-council](https://github.com/team-attention/agent-council) - Multi-agent collaboration plugin orchestrating multiple AI agents (Codex CLI, Gemini CLI) for diverse perspectives on the same task. 118 stars.
+- [Solopreneur kickoff](https://github.com/codeislaw1993/solopreneur-plugin) - Agent team meetings where 6 specialist agents debate approach before building.
+
+## Context and Memory Management
+
+Workflows for managing Claude Code's context window, memory persistence, and session continuity.
+
+- [claude-mem](https://github.com/thedotmack/claude-mem) - Plugin that auto-captures everything Claude does, compresses it with AI via Agent SDK, and injects relevant context back into future sessions. 39,615 stars.
+- [Continuous Claude v3](https://github.com/parcadei/Continuous-Claude-v3) - Context management via hooks that maintain state through ledgers and handoffs. MCP execution without context pollution. Agent orchestration with isolated context windows. 3,619 stars.
+- [arscontexta](https://github.com/agenticnotetaking/arscontexta) - Plugin that generates individualized knowledge systems from conversation — you describe how you think, and get a complete second brain as markdown files. 2,824 stars.
+- [Claude Code Development Kit](https://github.com/peterkrueck/Claude-Code-Development-Kit) - Handle context at scale with custom workflows combining hooks, MCP, and sub-agents working together. 1,330 stars.
+- [runesleo/claude-code-workflow](https://github.com/runesleo/claude-code-workflow) - Battle-tested template for memory management, context engineering, and task routing from 3 months of daily usage. 521 stars.
+- [cartographer](https://github.com/kingbootoshi/cartographer) - Plugin that maps and documents codebases of any size using parallel AI subagents. 522 stars.
+
+## TDD and Code Quality
+
+Workflows that enforce test-driven development and automated code quality checks.
+
+- [Superpowers TDD](https://github.com/jasonm/superpowers) - Full red-green-refactor loop: write failing test → implement → verify → refactor. Auto-triggers verification before marking any task complete.
+- [Everything Claude Code TDD](https://github.com/nicholasareed/everything-claude-code) - TDD workflow with autonomous loop support — agent keeps running test cycles until all pass.
+- [gstack QA](https://github.com/garrytan/gstack) - Browser-based QA that opens real pages with Playwright, takes screenshots, and validates against acceptance criteria.
+- [Superpowers code review loop](https://github.com/jasonm/superpowers) - Two-skill combo: `/requesting-code-review` prepares the request, `/receiving-code-review` processes feedback. Uses a dedicated code-reviewer agent.
+- [claude-pipeline](https://github.com/aaddrick/claude-pipeline) - Portable multi-agent pipeline with skills, agents, hooks, orchestration scripts, and quality gates. 97 stars.
+
+## Git and PR Automation
+
+Workflows that automate git operations, branching strategies, and pull request management.
+
+- [Superpowers git worktrees](https://github.com/jasonm/superpowers) - Run parallel workstreams using git worktrees — each agent works in its own isolated copy of the repo.
+- [gstack ship pipeline](https://github.com/garrytan/gstack) - Full deploy pipeline: merge PR → deploy → post-deploy monitoring loop. Chains `/ship` → `/land-and-deploy` → `/canary` skills.
+- [Autoresearch branch-per-run](https://github.com/karpathy/autoresearch) - Creates a new git branch for each autonomous experiment run, tracks results in `results.tsv`, keeps or discards based on evaluation.
 
 ## Ship and Deploy
 
 Workflows for publishing packages, deploying applications, and monitoring releases.
 
-- [gstack canary deploy](https://github.com/garrytan/gstack) - Post-deploy monitoring loop that watches for errors after canary release. Chains deploy → monitor → rollback-if-needed. Found in `skills/canary/`.
-- [MCP listing pipeline](https://github.com/mcpware/claude-code-organizer) - End-to-end MCP server publishing: npm publish → GitHub Actions CI/CD → Glama registry → mcp.so → Official MCP Registry → Plugin Marketplace. Documented in `3-ship/playbooks/mcp-listing-playbook.md`.
+- [gstack canary deploy](https://github.com/garrytan/gstack) - Post-deploy monitoring loop that watches for errors after canary release. Chains deploy → monitor → rollback-if-needed.
+- [MCP listing pipeline](https://github.com/mcpware/claude-code-organizer) - End-to-end MCP server publishing: npm publish → GitHub Actions CI/CD → Glama registry → mcp.so → Official MCP Registry → Plugin Marketplace.
+
+## Cross-LLM Collaboration
+
+Workflows that combine Claude Code with other AI models for multi-perspective development.
+
+- [claude-review-loop](https://github.com/hamelsmu/claude-review-loop) - Plugin implementing automated code review loop with Codex as the reviewer — Claude codes, Codex reviews, iterate until approved. 603 stars.
+- [codex-orchestrator](https://github.com/kingbootoshi/codex-orchestrator) - Delegate tasks to OpenAI Codex agents via tmux sessions, designed for Claude Code orchestration. 249 stars.
+- [agent-council](https://github.com/team-attention/agent-council) - Multi-agent collaboration orchestrating Claude, Codex CLI, and Gemini CLI for diverse perspectives on the same task. 118 stars.
+- [gstack codex second opinion](https://github.com/garrytan/gstack) - Multi-AI second opinion via OpenAI Codex during code review. Found in `skills/codex/`.
 
 ## Research and Discovery
 
 Workflows for market research, codebase exploration, and knowledge gathering.
 
-- [Everything Claude Code search-first](https://github.com/nicholasareed/everything-claude-code) - Research before coding — agent searches codebase, docs, and web before writing any code. Found in `skills/search-first/`.
-- [Autoresearch autonomous loop](https://github.com/karpathy/autoresearch) - Karpathy's autonomous AI research agent: modify code → train for 5 min → evaluate → keep/discard → repeat. Uses `program.md` as the skill file that instructs the loop.
-- [Everything Claude Code continuous learning](https://github.com/nicholasareed/everything-claude-code) - Auto-extracts patterns from coding sessions into reusable skills. The agent learns from its own work. Found in `skills/continuous-learning/`.
+- [Everything Claude Code search-first](https://github.com/nicholasareed/everything-claude-code) - Research before coding — agent searches codebase, docs, and web before writing any code.
+- [Autoresearch autonomous loop](https://github.com/karpathy/autoresearch) - Karpathy's autonomous AI research agent: modify code → train for 5 min → evaluate → keep/discard → repeat.
+- [Everything Claude Code continuous learning](https://github.com/nicholasareed/everything-claude-code) - Auto-extracts patterns from coding sessions into reusable skills. The agent learns from its own work.
 
 ## Browser and Testing
 
 Workflows that combine browser automation with Claude Code for testing and data gathering.
 
-- [gstack browser QA](https://github.com/garrytan/gstack) - Opens real web pages via Playwright, takes screenshots, validates UI against acceptance criteria. Found in `skills/qa/`.
+- [gstack browser QA](https://github.com/garrytan/gstack) - Opens real web pages via Playwright, takes screenshots, validates UI against acceptance criteria.
 - [UI Annotator + Claude Code](https://github.com/mcpware/ui-annotator-mcp) - Annotate any web page with hover labels, then tell Claude which element to change by name. Combines MCP server (reverse proxy) with Claude Code conversation. Zero extensions, any browser.
 - [Pagecast demo recording](https://github.com/mcpware/pagecast) - Record browser sessions as GIF/WebM/MP4 via MCP. Tell Claude what to demo, it opens a browser, performs actions, and exports the recording.
 
@@ -94,23 +125,23 @@ Workflows that combine browser automation with Claude Code for testing and data 
 
 Workflows for content creation, social media posting, and distribution.
 
-- [Agency Agents marketing suite](https://github.com/AidenYangX/agency-agents) - 144+ agent personas including 30+ marketing specialists (SEO, Reddit, TikTok, content strategy). Install script converts to Claude Code, Cursor, or Copilot format.
-- [OPC Skills solopreneur marketing](https://github.com/leoncvlt/opc-skills) - 10 standalone skills for solopreneurs: SEO/GEO optimization, Reddit research, Product Hunt search, domain hunting, logo creation, banner creation.
-- [Everything Claude Code content engine](https://github.com/nicholasareed/everything-claude-code) - Skills for article writing, market research, and investor materials. Found in `skills/content-engine/`, `skills/market-research/`.
+- [Agency Agents marketing suite](https://github.com/AidenYangX/agency-agents) - 144+ agent personas including 30+ marketing specialists (SEO, Reddit, TikTok, content strategy). Install script converts to Claude Code, Cursor, or Copilot format. 15K stars.
+- [OPC Skills solopreneur marketing](https://github.com/leoncvlt/opc-skills) - 10 standalone skills for solopreneurs: SEO/GEO optimization, Reddit research, Product Hunt search, domain hunting, logo creation, banner creation. 612 stars.
+- [Everything Claude Code content engine](https://github.com/nicholasareed/everything-claude-code) - Skills for article writing, market research, and investor materials.
 
 ## Business Operating Systems
 
 Complete systems that use Claude Code as the operating layer for running a business.
 
-- [Founder OS](https://github.com/danielraffel/founder-os) - Queue-based markdown OS: autonomous task processing, research pipelines, institutional memory (`.claude/learnings/`), context budgeting, goal-backward verification. Everything is markdown files — zero infrastructure.
-- [BOS-AI](https://github.com/SynapticAGI/BOS-AI) - Business Operating System with 30 agents across 10 categories, missions (pre-configured workflow templates), and the Business Chassis formula: Profit = Prospects x Lead Conv x Client Conv x Avg Spend x Frequency x Margin.
+- [Founder OS](https://github.com/danielraffel/founder-os) - Queue-based markdown OS: autonomous task processing, research pipelines, institutional memory, context budgeting, goal-backward verification. Everything is markdown files — zero infrastructure.
+- [BOS-AI](https://github.com/SynapticAGI/BOS-AI) - Business Operating System with 30 agents across 10 categories, missions (pre-configured workflow templates), and the Business Chassis formula.
 - [ABF (Agentic Business Framework)](https://github.com/agent-business-framework/abf) - Full TypeScript runtime for agent-as-employee companies. Seed-to-company pipeline: upload business plan → LLM generates agent team + workflows. YAML workflow definitions, approval queues, behavioral bounds.
 
 ## Autonomous Loops
 
 Workflows where Claude Code runs continuously without human intervention.
 
-- [Everything Claude Code autonomous loops](https://github.com/nicholasareed/everything-claude-code) - Start and manage autonomous agent loops that keep running until a goal is met. Commands: `/loop-start`, `/loop-status`. Found in `skills/autonomous-loops/` and `skills/continuous-agent-loop/`.
+- [Everything Claude Code autonomous loops](https://github.com/nicholasareed/everything-claude-code) - Start and manage autonomous agent loops that keep running until a goal is met. Commands: `/loop-start`, `/loop-status`.
 - [Autoresearch experiment loop](https://github.com/karpathy/autoresearch) - Agent autonomously modifies code, runs 5-minute experiments, evaluates results, and repeats. No human in the loop during runs.
 
 ## Scope and Config Management
@@ -118,17 +149,34 @@ Workflows where Claude Code runs continuously without human intervention.
 Workflows for managing Claude Code's own configuration across scopes.
 
 - [Claude Code Organizer](https://github.com/mcpware/claude-code-organizer) - Web dashboard + MCP server that scans `~/.claude/`, shows scope hierarchy (Global → Workspace → Project), and lets you drag-and-drop config between scopes. 4 MCP tools for programmatic scope management.
-- [gstack freeze/guard/unfreeze](https://github.com/garrytan/gstack) - Hook-based safety system to prevent changes to critical files. `/freeze` locks files, `/guard` enforces during session, `/unfreeze` removes protection. Found in `skills/freeze/` and `skills/guard/`.
+- [gstack freeze/guard/unfreeze](https://github.com/garrytan/gstack) - Hook-based safety system to prevent changes to critical files. `/freeze` locks files, `/guard` enforces during session, `/unfreeze` removes protection.
+
+## Monitoring and Dashboards
+
+Workflows for tracking Claude Code activity and visualizing progress.
+
+- [claude-hud](https://github.com/jarrodwatts/claude-hud) - Plugin that shows real-time context usage, active tools, running agents, and todo progress as a dashboard overlay. 11,537 stars.
+- [ccproxy](https://github.com/starbaser/ccproxy) - Proxy that hooks into Claude Code requests for intelligent model routing, request/response modification, and LangFuse tracking. 189 stars.
+
+## Comprehensive Frameworks
+
+All-in-one frameworks that bundle skills, hooks, agents, and commands into a single installable package.
+
+- [Everything Claude Code](https://github.com/nicholasareed/everything-claude-code) - 28 agents, 60+ commands, 100+ skills, hook profiles (minimal/standard/strict), language-specific rules for 12 languages, and autonomous loop management. 17K stars.
+- [claude-code-infrastructure-showcase](https://github.com/diet103/claude-code-infrastructure-showcase) - Full showcase of Claude Code infrastructure with skill auto-activation, hooks, and agents working together as an integrated system. 9,315 stars.
+- [ChrisWiles/claude-code-showcase](https://github.com/ChrisWiles/claude-code-showcase) - Comprehensive project config combining hooks, skills, agents, commands, and GitHub Actions workflows. 5,571 stars.
+- [claude-code-plugins-plus-skills](https://github.com/jeremylongshore/claude-code-plugins-plus-skills) - 340 plugins + 1,367 agent skills with CCPI package manager, interactive tutorials, and production orchestration patterns. 1,689 stars.
+- [CloudAI-X/claude-workflow-v2](https://github.com/CloudAI-X/claude-workflow-v2) - Universal Claude Code workflow plugin with agents, skills, hooks, and commands combined into one installable package. 1,301 stars.
 
 ---
 
 ## Related Awesome Lists
 
-- [awesome-claude-code](https://github.com/hesreallyhim/awesome-claude-code) - Comprehensive catalog of Claude Code tools, skills, hooks, agents, and plugins.
+- [awesome-claude-code](https://github.com/hesreallyhim/awesome-claude-code) - Comprehensive catalog of Claude Code tools, skills, hooks, agents, and plugins. 30K stars.
 - [awesome-claude-code-hooks](https://github.com/ithiria894/awesome-claude-code-hooks) - Curated collection of Claude Code hooks for event-driven automation.
-- [awesome-mcp-servers](https://github.com/punkpeye/awesome-mcp-servers) - The definitive list of MCP servers.
-- [awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills) - Claude Code skills collection.
-- [awesome-vibe-coding](https://github.com/filipecalegario/awesome-vibe-coding) - Vibe coding tools and resources.
+- [awesome-mcp-servers](https://github.com/punkpeye/awesome-mcp-servers) - The definitive list of MCP servers. 83K stars.
+- [awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills) - Claude Code skills collection. 47K stars.
+- [awesome-vibe-coding](https://github.com/filipecalegario/awesome-vibe-coding) - Vibe coding tools and resources. 3.6K stars.
 
 ## Contributing
 
