@@ -149,7 +149,7 @@ Workflows where Claude Code runs continuously without human intervention.
 Workflows for managing Claude Code's own configuration across scopes.
 
 - [Claude Code Organizer](https://github.com/mcpware/claude-code-organizer) - Web dashboard + MCP server that scans `~/.claude/`, shows scope hierarchy (Global → Workspace → Project), and lets you drag-and-drop config between scopes. 4 MCP tools for programmatic scope management.
-- [gstack freeze/guard/unfreeze](https://github.com/garrytan/gstack) - Hook-based safety system to prevent changes to critical files. `/freeze` locks files, `/guard` enforces during session, `/unfreeze` removes protection.
+- [gstack freeze/guard/unfreeze](https://github.com/garrytan/gstack) - File protection system using `PreToolUse` hook definitions in SKILL.md frontmatter with real shell scripts. Note: enforcement only works in Claude Code — Codex/non-Claude versions are advisory prose only. No hooks.json file exists.
 
 ## Monitoring and Dashboards
 
