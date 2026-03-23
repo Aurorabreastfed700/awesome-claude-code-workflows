@@ -162,7 +162,7 @@ Workflows for tracking Claude Code activity and visualizing progress.
 
 All-in-one frameworks that bundle skills, hooks, agents, and commands into a single installable package.
 
-- [Everything Claude Code](https://github.com/nicholasareed/everything-claude-code) - 28 agents, 60+ commands, 100+ skills, hook profiles (minimal/standard/strict), language-specific rules for 12 languages, and autonomous loop management. 17K stars.
+- [Everything Claude Code](https://github.com/nicholasareed/everything-claude-code) - 28 agents, 59 commands, 116 skills, 26 hook entries across 7 event groups with 27 hook scripts, language-specific rules for 13 languages, and autonomous loop management. By Affaan Mustafa (Anthropic hackathon winner). 17K stars.
 - [claude-code-infrastructure-showcase](https://github.com/diet103/claude-code-infrastructure-showcase) - Full showcase of Claude Code infrastructure with skill auto-activation, hooks, and agents working together as an integrated system. 9,315 stars.
 - [ChrisWiles/claude-code-showcase](https://github.com/ChrisWiles/claude-code-showcase) - Comprehensive project config combining hooks, skills, agents, commands, and GitHub Actions workflows. 5,571 stars.
 - [claude-code-plugins-plus-skills](https://github.com/jeremylongshore/claude-code-plugins-plus-skills) - 340 plugins + 1,367 agent skills with CCPI package manager, interactive tutorials, and production orchestration patterns. 1,689 stars.
